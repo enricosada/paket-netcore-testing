@@ -31,6 +31,4 @@ so using just `PAKET_FEATURE_LOCALTOOL`, will use normal .NET `paket.exe`, just 
 
 ## KNOWN ISSUES
 
-- `chmod+x` is missing for `.paket/paket`
-- the .NET wrapper script `.paket/paket` on linux/mac doesnt invoke mono (but path to tool is ok)
 - some wrong warning about `AppDataFolder`, `LocalApplicationData` on linux/mac.
