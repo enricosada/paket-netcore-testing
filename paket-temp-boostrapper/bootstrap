@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export PAKET_REPOTOOL_PREFERRED_RUNTIME=netcoreapp
+
+dotnet msbuild "$(dirname "$0")/bootstrap.proj" /nologo "$@"

@@ -1,0 +1,40 @@
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <DotnetHost></DotnetHost>
+    <DotnetHost Condition=" '$(OS)' != 'Windows_NT' ">mono </DotnetHost>
+  </PropertyGroup>
+
+  <Target Name="Build">
+    <Message Importance="high" Text="=======================================================================" />
+    <Message Importance="high" Text="======================= TEMPORARY BOOSTRAPPER =========================" />
+    <Message Importance="high" Text="=======================================================================" />
+    <Message Importance="high" Text="we are going to boostrap paket .net core as repo tool" />
+    <Message Importance="high" Text="so will download and install paket from Paket.nupkg" />
+    <Message Importance="high" Text="=======================================================================" />
+
+    <!-- REM install to download the paket as repo tool -->
+    <Exec Command='$(DotnetHost)paket.exe install --verbose'
+          WorkingDirectory="$(MSBuildThisFileDirectory)" />
+
+    <!-- REM hack to override the paket path -->
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)\assets\Directory.Build.props"
+          DestinationFolder="$(MSBuildThisFileDirectory)\.." />
+
+    <!-- REM copy wrapper -->
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)\assets\paket.cmd"
+          DestinationFolder="$(MSBuildThisFileDirectory)\..\.paket\" />
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)\assets\paket"
+          DestinationFolder="$(MSBuildThisFileDirectory)\..\.paket\" />
+
+    <Message Importance="high" Text="=======================================================================" />
+    <Message Importance="high" Text="DONE! now you can use:" />
+    <Message Importance="high" Text="    .paket\paket --help" Condition=" '$(OS)' == 'Windows_NT' " />
+    <Message Importance="high" Text="NOTE this is just a symlink to paket-temp-boostrapper\paket-files\bin\paket" Condition=" '$(OS)' == 'Windows_NT' " />
+    <Message Importance="high" Text="    .paket/paket --help" Condition=" '$(OS)' != 'Windows_NT' " />
+    <Message Importance="high" Text="NOTE this is just a symlink to ./paket-temp-boostrapper/paket-files/bin/paket" Condition=" '$(OS)' != 'Windows_NT' " />
+    <Message Importance="high" Text="=======================================================================" />
+
+  </Target>
+
+</Project>
