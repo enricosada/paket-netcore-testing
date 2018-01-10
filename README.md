@@ -8,7 +8,7 @@ Let's start, boostrap it
 paket-temp-boostrapper\bootstrap
 ```
 
-Now you have a `.paket-netcore\paket.cmd` (for win).
+Now you have a `.paket\paket.cmd` (for win).
 
 You can just run
 

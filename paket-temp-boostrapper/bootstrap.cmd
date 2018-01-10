@@ -16,15 +16,17 @@ echo paket.exe install --verbose
 paket.exe install --verbose
 
 REM hack to override the paket path
-echo use this to override the default paket path
 copy /Y Directory.Build.props.xml ..\Directory.Build.props
+
+REM copy wrapper
+copy /Y paket.netcore.cmd ..\.paket\paket.cmd
 
 echo.
 echo DONE!
 echo.
 echo now you can use:
 echo.
-echo .paket-netcore\paket --help
+echo .paket\paket --help
 echo.
 echo NOTE this is just a symlink to paket-temp-boostrapper\paket-files\bin\paket
 echo.
