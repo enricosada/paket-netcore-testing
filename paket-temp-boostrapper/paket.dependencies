@@ -1,6 +1,8 @@
 source https://www.nuget.org/api/v2
 framework net45
-storage: none
+
+# disabled storage:none for now, because a bug with repo tool when on different drives
+#storage:none
 
 # version 5.192.2 is the first with netcoreapp2.0
 repotool Paket >= 5.129.2
