@@ -24,4 +24,4 @@ dotnet build c1 -v n
 
 ## KNOWN ISSUES
 
-- [] no unix/mac for now. but `./paket-temp-boostrapper/paket-files/bin/paket` works as shell script to invoke
+- [ ] no unix/mac for now. but `./paket-temp-boostrapper/paket-files/bin/paket` works as shell script to invoke.
