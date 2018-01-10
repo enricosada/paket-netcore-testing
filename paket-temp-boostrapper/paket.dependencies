@@ -1,0 +1,5 @@
+source https://www.nuget.org/api/v2
+framework net45
+storage: none
+
+repotool Paket >= 5.129.2
