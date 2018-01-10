@@ -26,5 +26,7 @@ dotnet build c1 -v n
 
 ## KNOWN ISSUES
 
-- [ ] `dotnet build c1` fails on unix/mac
+- [X] xplat temporary boostrapper
+- [X] `.paket/paket --help` on unix/mac
 - [ ] `.paket/paket restore` fails on unix/mac with garbage in `.paket` dir
+- [ ] `dotnet build c1` fails on unix/mac, wrong paket invocation
