@@ -28,5 +28,5 @@ dotnet build c1 -v n
 
 - [X] xplat temporary boostrapper
 - [X] `.paket/paket --help` on unix/mac
-- [ ] `.paket/paket restore` fails on unix/mac with garbage in `.paket` dir
-- [ ] `dotnet build c1` fails on unix/mac, wrong paket invocation
+- [ ] `.paket/paket restore` fails on WSL with garbage in `.paket` dir
+- [X] `dotnet build c1` fails on unix/mac, wrong paket invocation
